@@ -4,10 +4,6 @@
 
 This repository contains comprehensive coursework from **Semester 2** at the University of Engineering and Technology (UET), covering fundamental programming concepts with a focus on **Object-Oriented Programming (OOP)** and **Memory Management** in C++.
 
-**Student:** Hafiz Muhammad Saeed (25-CS-005)
-**Section:** B
-**Academic Year:** 2025-2026
-
 ---
 
 ## 📁 Directory Structure
@@ -89,7 +85,7 @@ Applied memory management problems with working solutions.
 - **Lab Manual #5** - System design patterns
 - **Lab Manual #6** - Capstone projects
 
-#### Practice Questions (`OOP/Prct Questions/`)
+#### Practice Questions (`OOP/Practice Questions/`)
 
 **17 Specialized implementations** covering:
 - `Bank_sys.cpp` - Banking system with accounts and transactions
