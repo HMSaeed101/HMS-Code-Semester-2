@@ -7,15 +7,18 @@ This repository contains comprehensive coursework from **Semester 2** at the Uni
 ---
 
 ## 📁 Directory Structure
+
+```
 Semester # 2/
 ├── Memory/
-│ ├── Practice/ # Foundational memory concepts
-│ └── Tasks/ # Memory management assignments
+│   ├── Practice/        # Foundational memory concepts
+│   └── Tasks/           # Memory management assignments
 │
 └── OOP/
-├── OOP Assign/ # Object-Oriented Programming assignments (5 assignments)
-├── OOP Lab Tasks/ # Laboratory practical work (6 lab manuals)
-└── Practice Questions/ # Practice questions and system implementations
+    ├── OOP Assign/      # Object-Oriented Programming assignments (5 assignments)
+    ├── OOP Lab Tasks/   # Laboratory practical work (6 lab manuals)
+    └── Practice Questions/  # Practice questions and system implementations
+```
 
 ---
 
