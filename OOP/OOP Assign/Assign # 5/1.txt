@@ -17,11 +17,3 @@ Despite these criticisms, it is important to understand that friend functions an
 
 **Analogy:** Imagine a secure building where only authorized staff can access certain rooms. Encapsulation is the security system, and member functions are the official entry points. Declaring a friend is like giving someone a master key. While it may be convenient, overuse of such keys weakens the overall security structure of the building.
 
-**Confidence Level:** High
-
-**Sources:**
-[https://en.cppreference.com/w/cpp/language/friend](https://en.cppreference.com/w/cpp/language/friend)
-[https://www.geeksforgeeks.org/friend-class-function-cpp/](https://www.geeksforgeeks.org/friend-class-function-cpp/)
-[https://www.javatpoint.com/cpp-friend-function](https://www.javatpoint.com/cpp-friend-function)
-
-**Word Count:** 472
