@@ -25,7 +25,6 @@ class APPLE
     friend int fri_func(ORANGE, APPLE);
 };
 
-// Friend Function defined outsode of class b/c its a non-member Function
 int fri_func(ORANGE a, APPLE b)
 {
     return ( a.data + b.data );
