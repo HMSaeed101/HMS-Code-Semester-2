@@ -1,0 +1,4 @@
+Behaviour wise compatibility for Inheritance relationship
+Types of Inheritance relationship : Public, Protected, Private
+Direct, Indirect Base Classes & Derived Classes
+Multi-Level , Single, Multiple, Hierarchy, Hybrid Inheritance

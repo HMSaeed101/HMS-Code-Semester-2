@@ -1,0 +1,27 @@
+Many programmers argue that friend functions and friend classes are against the ideology of OOP. Explain why they think this is the fact. What qualities of OOP are affected by friend functions and friend classes. Explain in detail and submit your written work to the lab instructor. There is no need to write any code for thistask.
+
+
+In short, programmers criticize **friend functions and friend classes** because they weaken the core idea of controlled access in Object-Oriented Programming (OOP), especially **encapsulation and data hiding**.
+
+In OOP, the fundamental principle is that data inside a class should remain protected and only be accessed through well-defined member functions. This creates a “boundary” around the object, similar to how a fenced garden protects plants from outside interference. However, when you declare a friend function or class, you are essentially allowing an external entity to bypass this fence and directly access private and protected data. This breaks the discipline that OOP tries to enforce.
+
+The most affected quality is **encapsulation** (Encapsulation). Encapsulation ensures that internal data is hidden and can only be modified through controlled interfaces. Friend functions violate this by directly accessing internal data without going through member functions. As a result, the class loses control over how its data is used or modified, which can lead to unintended side effects or harder debugging.
+
+Closely related is **data hiding** (Data Hiding). Data hiding ensures that sensitive information is not exposed unnecessarily. When friendship is used, private members are exposed to specific external functions or classes, reducing the effectiveness of this protection. It is like giving a duplicate key of your locked room to someone else, the room is still locked for others, but the protection is no longer absolute.
+
+Another impacted principle is **abstraction** (Abstraction). Abstraction focuses on exposing only essential features while hiding implementation details. Friend functions tend to expose internal implementation details because they often depend on the internal structure of the class. This creates tight coupling between the class and the friend, making future changes difficult. If the internal structure changes, all friend entities may also need modification.
+
+Additionally, friend relationships can increase **coupling** (Coupling). In well-designed OOP systems, classes should be loosely coupled, meaning they should depend on each other as little as possible. Friendship creates strong dependencies because the friend must know the internal details of the class. This reduces modularity and makes the system harder to maintain and scale.
+
+Despite these criticisms, it is important to understand that friend functions and classes are not inherently wrong. They are sometimes necessary in situations where two classes must work very closely together, such as operator overloading or when performance optimization requires direct access. In such cases, friendship acts like giving trusted access to a collaborator, but it must be used carefully and minimally.
+
+**Analogy:** Imagine a secure building where only authorized staff can access certain rooms. Encapsulation is the security system, and member functions are the official entry points. Declaring a friend is like giving someone a master key. While it may be convenient, overuse of such keys weakens the overall security structure of the building.
+
+**Confidence Level:** High
+
+**Sources:**
+[https://en.cppreference.com/w/cpp/language/friend](https://en.cppreference.com/w/cpp/language/friend)
+[https://www.geeksforgeeks.org/friend-class-function-cpp/](https://www.geeksforgeeks.org/friend-class-function-cpp/)
+[https://www.javatpoint.com/cpp-friend-function](https://www.javatpoint.com/cpp-friend-function)
+
+**Word Count:** 472
