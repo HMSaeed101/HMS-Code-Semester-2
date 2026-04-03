@@ -1,4 +1,4 @@
-# Semester 2 - Programming Coursework
+# Semester 2 - OOP Programming Coursework
 
 ## Overview
 
@@ -90,7 +90,6 @@ Applied memory management problems with working solutions.
 
 #### Practice Questions (`OOP/Practice Questions/`)
 
-**17 Specialized implementations** covering:
 - `Bank_sys.cpp` - Banking system with accounts and transactions
 - `Emp_sys.cpp` - Employee management system
 - `Uni_sys.cpp` - University management system
