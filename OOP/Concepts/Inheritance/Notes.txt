@@ -2,3 +2,13 @@ Behaviour wise compatibility for Inheritance relationship
 Types of Inheritance relationship : Public, Protected, Private
 Direct, Indirect Base Classes & Derived Classes
 Multi-Level , Single, Multiple, Hierarchy, Hybrid Inheritance
+If no class level association, then the data members should be in the private. If class level association YES, then data members in protected.
+Always make separate setter functions for each of the data member.
+Member function should only be "declared" in the class, and defined  with the body outside of class by class resolution operator.
+Constructors calling mechanism for Inheritance, base and child class Constructors relationship
+Write child class constructor to call base class constructor
+Constructor calling, which first, destructors____ base class constructor first and child last
+
+
+OOP Team
+Teams ID 75kq4ht

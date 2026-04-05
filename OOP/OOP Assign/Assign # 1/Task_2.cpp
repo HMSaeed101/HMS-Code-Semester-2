@@ -1,8 +1,7 @@
-
 /*
-Write a class called rectangle. Your task is to store the length and width of the rectangle. Write a member function called increment that will add 1 to the value of length and width. Also write a function that will compute the area of the rectangle. Finally write a constant function that will display the length, width and area of the rectangle.
+Hafiz Muhammad Saeed
+25-CS-005
 */
-
 #include <iostream>
 using namespace std;
 

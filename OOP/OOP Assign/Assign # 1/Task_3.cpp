@@ -1,9 +1,6 @@
 /*
-Write a program that creates a class called number. Your class will have two data members namely num (float) and result (int). To find the factorial of the entered number you will need to design three functions as follows:
-• Function to determine if a number is a whole number or not
-• Function to determine if the number is positive or not
-• Function to find the actual factorial
-• Function to display the number and its factorial
+Hafiz Muhammad Saeed
+25-CS-005
 */
 
 #include <iostream>
