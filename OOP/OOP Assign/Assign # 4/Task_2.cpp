@@ -1,30 +1,42 @@
-/*
-Your task is to create a class that contains an integer pointer data member. Create a single object named “one” in the main and assign values to the data member of the object. Then create another object named “two” that is a copy of the “one”. Create a shallow copy constructor and then demonstrate that both objects share a common memory i.e. modifying one object in fact modifies the other. Create a display function that will show the values of the object.
-*/
-
 #include <iostream>
 using namespace std;
 
-class NUMBER
+class EXAMPLE
 {
-    public:
-    int *pointer;
+private:
+    int *info;
+
+public:
+    DEMO(int val)
+    {
+        info = new int;
+        *info = val;
+    }
 
     // Shallow Copy Constructor
-    NUMBER(NUMBER obj)
+    DEMO(DEMO &obj)
     {
-        // int *pointer = new int;
+        info = obj.info;
     }
 
-    // Deep Copy Constructor
-    NUMBER(NUMBER &obj)
-    {
-        int *pointer = new int;
-    }
-
+    void set_value(int val){*info = val;}
+    void display(){cout << "Value: " << *info << " | Address: " << info << endl;}
 };
 
 int main()
 {
+    DEMO one(10);
+    DEMO two = one;
 
+    cout << "Before modification" << endl;
+    one.display();
+    two.display();
+
+    one.set_value(50);
+
+    cout << endl << "After modifying object 'one':" << endl;
+    one.display();
+    two.display();
+
+    return 0;
 }

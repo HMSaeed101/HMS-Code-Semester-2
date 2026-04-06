@@ -9,6 +9,5 @@ Constructors calling mechanism for Inheritance, base and child class Constructor
 Write child class constructor to call base class constructor
 Constructor calling, which first, destructors____ base class constructor first and child last
 
-
 OOP Team
 Teams ID 75kq4ht

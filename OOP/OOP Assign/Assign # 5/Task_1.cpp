@@ -1,18 +1,12 @@
 // Hafiz Muhammad Saeed (25-CS-005)
-//! Quadratic Equation
-
-/*
-    Construct the class objects by using a nullary constructor.
-    Then design a friend function which will determine the proot and nroot of the equation.
-    Create another friend function which will display the values of proot and nroot
-*/
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class EQUATION
 {
-    friend int calc_root(EQUATION &obj);
+    friend void calc_root(EQUATION &obj);
     friend void display_root(EQUATION &obj);
 
     private:
@@ -20,7 +14,7 @@ class EQUATION
     float pos_root, neg_root;
 
     public:
-    EQUATION
+    EQUATION()
     {
         a = 0;
         b = 0;
@@ -32,30 +26,40 @@ class EQUATION
     void set_values(int a, int b, int c);
 };
 
-void EQUATION :: set_values(int a, int b, int c)
+void EQUATION :: set_values(int x, int y, int z)
 {
-    a = a;
-    b = b;
-    c = c;
+    a = x;
+    b = y;
+    c = z;
 }
 
-int calc_root(EQUATION &obj)
+void calc_root(EQUATION &obj)
 {
+    float disc = obj.b * obj.b - 4 * (obj.a * obj.c);
 
+    if(disc<0)
+    {
+        cout << "Roots are complex, can't calculate real roots." << endl;
+        return;
+    }
+
+    obj.pos_root = (-obj.b + sqrt(disc)) / (2 * obj.a);
+    obj.neg_root = (-obj.b - sqrt(disc)) / (2 * obj.a);
 }
 
 void display_root(EQUATION &obj)
 {
-
+    cout << "Positive Root : " << obj.pos_root << endl;
+    cout << "Negative Root : " << obj.neg_root << endl;
 }
 
 
 int main()
 {
-    EQUATION equation();
-    equation.set_values(1,2,-3);
+    EQUATION eq;
+    eq.set_values(1,2,-3);
 
-    calc_root(equation);
-    display(equation);
+    calc_root(eq);
+    display_root(eq);
 
 }
