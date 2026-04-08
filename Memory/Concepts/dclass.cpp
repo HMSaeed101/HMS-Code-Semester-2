@@ -1,4 +1,4 @@
-//! Mini Project – Safe Dynamic String Class**
+//! Mini Project – Safe Dynamic String Class
 /*
 Applying everything together (Rule of Three preview, but only heap focus).
 

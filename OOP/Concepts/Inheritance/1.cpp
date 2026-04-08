@@ -1,6 +1,3 @@
-/*****************************************
-* Program: Inheritance Demonstration
-********************************************/
 #include <iostream>
 using namespace std;
 
