@@ -15,9 +15,9 @@ Semester # 2/
 │   └── Tasks/           # Memory management assignments
 │
 └── OOP/
-    ├── OOP Assign/      # Object-Oriented Programming assignments (5 assignments)
-    ├── OOP Lab Tasks/   # Laboratory practical work (6 lab manuals)
-    └── Practice Questions/  # Practice questions and system implementations
+    ├── OOP Assign/      # OOP assignments
+    ├── OOP Lab Tasks/   # Lab practical work
+    └── Practice Questions/  # Practice questions & system implementations
 ```
 
 ---

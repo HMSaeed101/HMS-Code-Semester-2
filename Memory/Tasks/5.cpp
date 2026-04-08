@@ -1,15 +1,30 @@
-/*
-### **Task 5: Double Delete Error**
-**Concept to Learn:** Double delete → undefined behavior.
+//! Using Nullptr
 
-**Instructions:**
-1. Allocate one `int` with `new`.
-2. Delete it once.
-3. Delete it again (intentionally).
-4. Run and observe crash / corruption.
-5. Fix it by adding a null check before second delete.
+#include <iostream>
+using namespace std;
 
-**Verification Questions:**
-1. Why is double delete dangerous?
-2. How does setting pointer to `nullptr` prevent this?
-*/
+void safeDelete(int*& p)
+{
+    if (p != nullptr)
+    {
+        delete p;
+        p = nullptr;   // Prevent dangling pointer
+    }
+}
+
+int main()
+{
+    int* a = new int(10);
+
+    int* b = new int(20);
+
+    int* c = new int(30);
+
+    // Safe deletion
+    safeDelete(a);
+    safeDelete(b);
+    safeDelete(c);
+
+    cout << "All pointers safely handled." << endl;
+    return 0;
+}
