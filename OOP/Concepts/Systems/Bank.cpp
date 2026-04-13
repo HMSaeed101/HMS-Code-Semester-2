@@ -1,4 +1,4 @@
-// Bank Account
+//! Bank Account
 
 #include <iostream>
 using namespace std;
@@ -11,7 +11,7 @@ class BANK_ACCOUNT
 
     public:
 
-    // Setter Function
+    // Constructor
     BANK_ACCOUNT(string name, double amount)
     {   owner = name;
         balance = amount;
@@ -56,6 +56,6 @@ int main()
     main.display();
 
     cout << "------" << endl << endl;
-    BANK_ACCOUNT saving=main;
+    BANK_ACCOUNT saving = main;
     saving.display();
 }

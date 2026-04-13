@@ -13,15 +13,17 @@ class CAR
     string model;
     int price;
 
-    void display()
-    {
-        cout << "\nCar Information.\n";
-        cout << "Name : " << name << endl;
-        cout << "Model : " << model << endl;
-        cout << "Owner : " << owner << endl;
-        cout << "Price : " << price << endl;
-    }
+    void display();
 };
+
+void CAR :: display()
+{
+    cout << "\nCar Information.\n";
+    cout << "Name : " << name << endl;
+    cout << "Model : " << model << endl;
+    cout << "Owner : " << owner << endl;
+    cout << "Price : " << price << endl;
+}
 
 int main()
 {
