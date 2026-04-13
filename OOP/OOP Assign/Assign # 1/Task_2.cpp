@@ -25,14 +25,16 @@ class RECTANGLE
     float calc_area()
     {   return length * width;}
 
-    void display()
-    {
-        cout << "Length : " << length << endl;
-        cout << "Width : " << width << endl;
-        float area = calc_area();
-        cout << "Area : " << area << endl;
-    }
+    void display();
 };
+
+void RECTANGLE :: display()
+{
+    cout << "Length : " << length << endl;
+    cout << "Width : " << width << endl;
+    float area = calc_area();
+    cout << "Area : " << area << endl;
+}
 
 int main()
 {

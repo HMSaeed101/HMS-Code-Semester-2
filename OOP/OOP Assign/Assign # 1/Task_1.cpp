@@ -42,23 +42,24 @@ class LAPTOP
     void setscreen_size(float _)
     {screen_size=_;}
 
-    // RAM function
     void upgrade_RAM(int _)
     {RAM += _;}
 
-    // Display Info
-    void display()
-    {
-        cout << "Brand : " << brand << endl;
-        cout << "Model : " << model << endl;
-        cout << "Colour : " << color << endl;
-        cout << "Serial : " << serial << endl;
-        cout << "RAM : " << RAM << endl;
-        cout << "Price : $ " << price << endl;
-        cout << "Processor Speed : " << processor_speed << " GHz" << endl;
-        cout << "Screen Size : " << screen_size << endl;
-    }
+    void display();
 };
+
+void LAPTOP :: display()
+{
+    cout << "Brand : " << brand << endl;
+    cout << "Model : " << model << endl;
+    cout << "Colour : " << color << endl;
+    cout << "Serial : " << serial << endl;
+    cout << "RAM : " << RAM << endl;
+    cout << "Price : $ " << price << endl;
+    cout << "Processor Speed : " << processor_speed << " GHz" << endl;
+    cout << "Screen Size : " << screen_size << endl;
+}
+
 
 int main()
 {

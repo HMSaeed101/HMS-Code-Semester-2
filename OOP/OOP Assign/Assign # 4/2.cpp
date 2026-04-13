@@ -19,7 +19,6 @@ public:
     {
         size = obj.size;
         arr = new int[size];          // allocate new memory
-
         for(int i = 0; i < size; i++)
         {
             arr[i] = obj.arr[i];      // copy each element
@@ -38,14 +37,11 @@ public:
         cout << endl;
     }
 
-    void modify()
-    {
-        arr[0]= 999;
-    }
+    void modify(){arr[0]= 999;}
 
     ~NUMBERS()
     {
-        delete[] arr; // free memory
+        delete[] arr;
     }
 };
 

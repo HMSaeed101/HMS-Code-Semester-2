@@ -19,7 +19,7 @@ public:
     // Public static function to create object
     static Example createObject(int v)
     {
-        return Example(v); // allowed because it's inside class
+        return Example(v);
     }
 
     void display(){cout << "Value: " << value << endl;}
