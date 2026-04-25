@@ -1,0 +1,63 @@
+/*
+Create a class named Trigon inherited from the class GeometricShape (containing a single data member named shapeName (a string) and a member function named setShapeName(shapeName).
+The class Trigon is required to hold:
+• Three data members i.e. base, perpendicular, and hypotenuse of type double
+• A no-arg constructor that initializes all data members with value 1.0
+• A parameterized constructor to initialize all data fields with user-defined values
+• The setter functions for all three data fields
+• The accessor functions for all three data fields
+• A function named displayArea() that shows the area of a certain Trigon object
+In the main() function make three objects of class Trigon while considering the shapeName as “threeangle” for each object. In addition, it is required to invoke all the functions of Trigon class
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class GEOMETRIC_SHAPE
+{
+    private:
+    string shapeName;
+
+    public:
+    void setShapeName(string _){shapeName = _;}
+};
+
+class GEOMETRIC_SHAPE : TRIGON
+{
+    private:
+    double per;
+    double base;
+    double hyp;
+
+    public:
+    TRIGON()
+    {
+        per = 1.0;
+        base = 1.0;
+        hyp = 1.0;
+    }
+
+    TRIGON(double _per, double _base, double _hyp) : per(_per), base(_base), hyp(_hyp) {}
+
+    void setper (_per) { per = _per ;}
+    void setbase (_base) { base = _base;}
+    void sethyp (_hyp) { hyp = _hyp;}
+
+    void getper { cout << per;}
+    void getbase{ cout << base;}
+    void gethyp { cout << hyp;}
+
+    void displayArea()
+    {
+        double area;
+        area = 0.5 * (base * per);
+        cout << "Area : " << area;
+    }
+
+};
+
+int main()
+{
+    TRIGON
+}

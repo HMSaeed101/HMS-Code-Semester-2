@@ -1,3 +1,17 @@
+/*
+The BankAccount class has the following attributes i.e.
+• accountNumber, accountHolderName, and balance
+• A parameterized constructor to initialize data fields with user-defined values
+Create two derived classes i.e. CheckingAccount and SavingsAccount. Both these classes have
+• A three argument constructor to initialize base class’s data fields
+• Two functions i.e. deposit(amount) to deposit certain amount and witdraw(amount) to withdraw certain
+amount
+The withdraw function of CheckingAccount class has an overdraft limit but SavingsAccount cannot be over draft.
+In the main() function, create an object of both SavingAccount and CheckingAccount class. Moreover, test the
+functionality of their respective deposit(amount) and withdraw(amount) functions while passing different amounts
+as parameter.
+*/
+
 #include <iostream>
 using namespace std;
 
