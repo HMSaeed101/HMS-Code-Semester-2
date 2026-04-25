@@ -1,21 +1,5 @@
-/*
-Consider a class BankAccount that has
-• Two attributes i.e. accountID and balance and
-• A function named balanceInquiry() to get information about the current amount in the account
-
-Derive two classes from the BankAccount class i.e. CurrentAccount and the SavingsAccount.
-Both classes (CurrentAccount and SavingsAccount) inherit all attributes/behaviors from the BankAccount class.
-
-In addition, followings are required to be the part of both classes
-• Appropriate constructors to initialize data fields of base class
-• A function named amountWithdrawn(amount) to withdraw certain amount while taken into account the following conditions
-o While withdrawing from current account, the minimum balance should not decrease Rs. 5000
-o While withdrawing from savings account, the minimum balance should not decrease Rs. 10,000
-• amountDeposit(amount) to deposit amount in the account
-In the main() function, create instances of derived classes (i.e. CurrentAccount and SavingsAccount) and invoke
-their respective functions to test their working
-*/
-
+// Hafiz Muhammad Saeed
+// 25-CS-005
 #include <iostream>
 using namespace std;
 
@@ -28,7 +12,14 @@ class BANKACCOUNT
     public:
     BANKACCOUNT(int id, int bal) : accountid(id), balance(bal) {}
 
-    void balanceinquiry();
+    void balanceinquiry()
+    {cout << "Balance : " << balance << endl;}
+
+    void deposit(int amount)
+    {
+        balance = balance + amount;
+        cout << "New balance after depositing " << amount << " Rs- is : " << balance << endl;
+    }
 
 };
 
@@ -37,9 +28,12 @@ class CURRENTACCOUNT : public BANKACCOUNT
 {
 
     public:
-    CURRENTACCOUNT(int id, int bal) : BANKACCOUNT(id, bal)
-    {
+    CURRENTACCOUNT(int id, int bal) : BANKACCOUNT(id, bal){}
 
+    void withdraw(int amount)
+    {
+        if( balance - amount < 5000 ) {cout << "Can't withdraw!!!";}
+        else {balance = balance - amount;}
     }
 };
 
@@ -48,8 +42,30 @@ class SAVINGSACCOUNT : public BANKACCOUNT
 {
 
     public:
-    SAVINGSACCOUNT(int id, int bal) : BANKACCOUNT(id, bal)
-    {
+    SAVINGSACCOUNT(int id, int bal) : BANKACCOUNT(id, bal) {}
 
+    void withdraw(int amount)
+    {
+        if( balance - amount < 10000 ) {cout << "Can't withdraw!!!";}
+        else {balance = balance - amount;}
     }
 };
+
+
+int main()
+{
+    CURRENTACCOUNT acc1(101, 30000);
+    SAVINGSACCOUNT acc2(202, 50000);
+
+    acc1.balanceinquiry();
+    acc2.balanceinquiry();
+
+    acc1.deposit(20000);
+    acc2.deposit(30000);
+
+    acc1.withdraw(10000);
+    acc2.withdraw(10000);
+
+    acc1.balanceinquiry();
+    acc2.balanceinquiry();
+}

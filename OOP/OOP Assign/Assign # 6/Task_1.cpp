@@ -16,48 +16,55 @@ using namespace std;
 
 class GEOMETRIC_SHAPE
 {
-    private:
+    protected:
     string shapeName;
 
     public:
     void setShapeName(string _){shapeName = _;}
 };
 
-class GEOMETRIC_SHAPE : TRIGON
+class TRIGON : public GEOMETRIC_SHAPE
 {
     private:
-    double per;
-    double base;
-    double hyp;
+    double per, base, hyp;
 
     public:
     TRIGON()
-    {
-        per = 1.0;
+    {   per = 1.0;
         base = 1.0;
         hyp = 1.0;
     }
 
     TRIGON(double _per, double _base, double _hyp) : per(_per), base(_base), hyp(_hyp) {}
 
-    void setper (_per) { per = _per ;}
-    void setbase (_base) { base = _base;}
-    void sethyp (_hyp) { hyp = _hyp;}
+    void setper (double _per) { per = _per ;}
+    void setbase (double _base) { base = _base;}
+    void sethyp (double _hyp) { hyp = _hyp;}
 
-    void getper { cout << per;}
-    void getbase{ cout << base;}
-    void gethyp { cout << hyp;}
+    void getper () { cout << per << endl;}
+    void getbase() { cout << base << endl;}
+    void gethyp () { cout << hyp << endl;}
 
     void displayArea()
     {
         double area;
         area = 0.5 * (base * per);
-        cout << "Area : " << area;
+        cout << "Area : " << area << endl;
     }
 
 };
 
 int main()
 {
-    TRIGON
+    TRIGON tri1(23, 34, 45);
+    TRIGON tri2(23, 34, 45);
+    TRIGON tri3(23, 34, 45);
+
+    tri1.setShapeName("threeangle");
+    tri2.setShapeName("threeangle");
+    tri3.setShapeName("threeangle");
+
+    tri1.displayArea();
+    tri2.displayArea();
+    tri3.displayArea();
 }

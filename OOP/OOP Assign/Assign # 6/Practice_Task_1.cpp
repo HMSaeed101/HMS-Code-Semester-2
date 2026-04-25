@@ -1,19 +1,5 @@
-/*
-Consider a base class named Employee and its derived classes HourlyEmployee and PermanentEmployee while
-taking into account the following criteria.
-
-• Employee class has two data fields i.e. a name (of type string) and specific empID (of type integer)
-• Both classes (HourlyEmployee and PermanentEmployee) have an attribute named hourlyIncome
-• Both classes (HourlyEmployee and PermanentEmployee) have three-argument constructor to initialize the hourlyIncome as well as data fields of the base class
-• Class HourlyEmployee has a function named calculate_the_hourly_income to calculate the income of an employee for the actual number of hours he or she worked
-• PermanentEmployee class has function named calculate_the_income to calculate the income of an employee that gets paid the salary for exact 240 hours, no matter how many actual hours he or she worked.
-
-Again, one hour salary is Rs. 150.
-
-Implement all class definitions with their respective constructors to initialize all data members and functions to compute the total income of an employee. In the main() function, create an instance of both classes (i.e. HourlyEmployee and PermanentEmployee) and test the working of functions that calculate total income of an employee.
-
-*/
-
+// Hafiz Muhammad Saeed
+// 25-CS-005
 #include <iostream>
 #include <string>
 using namespace std;
