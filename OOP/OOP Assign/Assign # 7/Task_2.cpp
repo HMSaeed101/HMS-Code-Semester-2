@@ -1,3 +1,6 @@
+// Hafiz Muhammad Saeed
+// 25-CS-005
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -21,7 +24,7 @@ class MUSIC
 
     void setsingtitle (string _t){ songtitle= _t;}
     void setsingername (string _n){ singername = _n ;}
-    void setsingingyear (string _y){ singingyear= _y ;}
+    void setsingingyear (int _y){ singingyear= _y ;}
 };
 
 
@@ -47,5 +50,6 @@ class FOLKMUSIC : public MUSIC
 
 int main()
 {
-    
+    FOLKMUSIC music("WOW", "Wahh", 2007, "Punjab");
+    music.show();
 }
