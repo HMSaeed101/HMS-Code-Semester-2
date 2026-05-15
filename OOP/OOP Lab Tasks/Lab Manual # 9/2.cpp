@@ -1,27 +1,19 @@
-/*
-Hafiz Muhammad Saeed 25-CS-05
-*/
-
 #include <iostream>
 #include <string>
 using namespace std;
 
+// Base Class
 class BANKACCOUNT
 {
     protected:
-    int accountnumber;
-    int balance;
+    int accountnum;
+    double balance;
+    bool iswithdraw = false;
 
     public:
-    BANKACCOUNT(int acc, int bal)
-    {
-        accountnumber = acc;
-        balance = bal;
-    }
+    BANKACCOUNT(int acc, double bal) : accountnum(acc), balance(bal) {}
 
     void deposit(int amount) {balance += amount;}
-
-    bool iswithdraw = false;
 
     void withdraw(int amount)
     {
@@ -29,34 +21,39 @@ class BANKACCOUNT
         {
             balance -= amount;
             iswithdraw = true;
+            cout << "Withdraw Successfull\n";
+        }
+        else
+        {
+            cout << "Insufficient Balance\n";
         }
     }
 
-    void displaybalance()
-    {
-        cout << "Balance : " << balance << endl;
-    }
+    void displaybalance() {cout << "Balance : " << balance << endl;}
 };
+
 
 class FIXEDDEPOSITACCOUNT : public BANKACCOUNT
 {
-    int interestrate;
-    int maturityperiod;
-    int penalityearlywithdraw;
+    double intrate = 0;
+    int maturityperiod; // In Months int
+    double penaltyamount;
 
     public:
-    FIXEDDEPOSITACCOUNT(int acc, int bal, int r, int p, int pen) : BANKACCOUNT(acc, bal)
-    {
-        interestrate = r;
-        maturityperiod = p;
-        penalityearlywithdraw = pen;
-    }
+    FIXEDDEPOSITACCOUNT(int acc, double bal, double r, int per, int pam) : BANKACCOUNT(acc, bal), intrate(r), maturityperiod(per), penaltyamount(pam) {}
 
     void calculateMaturityAmount()
     {
         if(iswithdraw)
         {
-            balance = interestrate * balance;
+            balance = balance - penaltyamount;
+            cout << "Early withdraw detected! Penalty of " << penaltyamount << " Rs. applied.";
+        }
+        else
+        {
+            intrate = (balance * intrate / 100.0);
+            balance += intrate;
+            cout << "Maturity reached! Interest of " << intrate << " added." << endl;
         }
     }
 };
@@ -64,9 +61,14 @@ class FIXEDDEPOSITACCOUNT : public BANKACCOUNT
 
 int main()
 {
-    BANKACCOUNT acc1(1012, 50000);
-    acc1.withdraw(1000);
-    acc1.deposit(2000);
-    acc1.displaybalance();
+    cout << "Testing Fixed Deposit (On Time):" << endl;
+    FIXEDDEPOSITACCOUNT fd1(2005, 100000.0, 10.0, 12, 500.0); // 10% interest
+    fd1.displaybalance();
+    fd1.calculateMaturityAmount();
+
+    cout << "\nTesting Fixed Deposit (Early Withdrawal):" << endl;
+    FIXEDDEPOSITACCOUNT fd2(3009, 100000.0, 10.0, 12, 500.0);
+    fd2.withdraw(5000); // Triggers the penalty flag
+    fd2.calculateMaturityAmount();
 
 }

@@ -2,7 +2,7 @@
 /*
 Implement hierarchical inheritance to model different types of vehicles for a registration system.
 
-Define a base class named Vehicle that contains common attributes like regNumber, ownerName, and price.
+Define a base class named Vehicle that contains common attributes like regNumber, ownerName, and baseprice.
 
 From this base class, derive two separate classes: Car and Bike.
 
@@ -12,54 +12,66 @@ The Bike class should include attributes like hasGear (a boolean value) and engi
 in cubic centimeters).
 
 Create one object of Car and one object of Bike, set their respective attributes, and display all details.
+
 Furthermore, add a method named calculateRoadTax() in both derived classes, implementing different tax calculation formulas for cars and bikes.
 */
 
 #include <iostream>
+#include <string>
+
 using namespace std;
+
 
 class VEHICLE
 {
     protected:
     string owner;
     int regnum;
-    int price;
+    int baseprice;
 
     public:
-    VEHICLE()
+    VEHICLE(string n, int reg, int p) : owner(n), regnum(reg), baseprice(p) {}
+
+    void display()
     {
-        owner = "Unknown";
-        regnum = 000;
-        price = 000;
-    }
-    VEHICLE(string n, int reg, int p)
-    {
-        owner = n;
-        regnum = reg;
-        price = p;
+        cout << "=========== Vehicle Display ===========\n";
+        cout << "Owner Name" << " : " << owner << endl;
+        cout << "Registration Number" << " : " << regnum << endl;
+        cout << "Base Price" << " : " << baseprice << endl;
     }
 };
 
+
+enum FUELTYPE{Petrol, Diesel, Electric};
+
 class CAR : public VEHICLE
 {
-    string fueltype;
+    FUELTYPE fuel;
     int num_doors;
 
     public:
-    CAR()
+    CAR(string n, int reg, int p, FUELTYPE ft, int d) : VEHICLE(n, reg, p), fuel(ft), num_doors(d) {}
+
+    void calculateRoadTax()
     {
-        fueltype = "UNKNOWN";
-        num_doors = "UNKNOWN";
-    }
-    CAR(string n, int reg, int p, string ft, int d) : VEHICLE(n, reg, p)
-    {
-        fueltype = ft;
-        num_doors = d;
+        double tax = baseprice * 0.10;
+        cout << "Road Tax (10%)" << " : " << tax << endl;
     }
 
-    void CALCULATEROADTAX()
+    void display()
     {
-
+        VEHICLE :: display();
+        cout << "Fuel Type" << " : " ;
+        switch(fuel)
+        {
+            case Petrol:   cout << "Petrol";   break;
+            case Diesel:   cout << "Diesel";   break;
+            case Electric: cout << "Electric"; break;
+        }
+        cout << endl;
+        cout << "Number of Doors" << " : " << num_doors << endl;
+        calculateRoadTax();
+        cout << "=========================================" << endl;
     }
 };
 
@@ -69,19 +81,33 @@ class BIKE : public VEHICLE
     int engineCC;
 
     public:
-    void CALCULATEROADTAX()
-    {
+    BIKE(string n, int reg, int p, bool gear, int cc) : VEHICLE(n, reg, p), hasgear(gear), engineCC(cc) {}
 
+    void calculateRoadTax()
+    {
+        double tax = baseprice * 0.05;
+        cout << "Road Tax (5%)" << " : " << tax << endl;
+    }
+
+    void display()
+    {
+        VEHICLE :: display();
+        cout << "Gears" << " : " << (hasgear ? "Yes" : "No") << endl;
+        cout << "Engine CC" << " : " << engineCC << endl;
+        calculateRoadTax();
+        cout << "=========================================" << endl;
     }
 };
 
+
 int main()
 {
-    CAR car;
-    BIKE bike;
+    CAR myCar("Saeed", 5505, 2500000, Petrol, 4);
+    BIKE myBike("Ali", 9901, 150000, true, 150);
 
-    car.
+    myCar.display();
 
+    myBike.display();
 
-    bike.
+    return 0;
 }
