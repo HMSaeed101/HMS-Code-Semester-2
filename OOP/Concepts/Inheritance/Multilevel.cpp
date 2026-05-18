@@ -3,7 +3,6 @@
 #include <iostream>
 using namespace std;
 
-// Base class of Drink class (i.e. "parent class", which makes it the "grandparent" of HotDrink class)
 class MenuItem
 {
 public:
@@ -55,21 +54,18 @@ int main()
 
 //!   Visualization of Multilevel Inheritance
 //
-//
 //      Base Class X
 //           ↑
 //           |
-//           | - Y inherits from X
+//           |  Y inherits from X
 //           |
 //           |
 //  Derived AND Base Class Y
 //           ↑
 //           |
-//           | - Z inherits from Y
+//           |  Z inherits from Y
 //           |
 //           |
 //     Derived Class Z
-//
-//
-//  Y is a parent class of Z, and we can think of X as a
-//  "grandparent" class of Z.
+
+//  Y is a parent class of Z, and we can think of X as a "grandparent" class of Z.
