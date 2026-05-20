@@ -11,7 +11,7 @@ Number type (mobile or landline)
 Your task is to create two classes namely number and computation
 
 Class phoneNumber to store these four parts of a phone number
-Class numberInfo compose of name, city and address and const function display to show the phone number and name
+Class numberInfo compose of name, city and address and const function display to show the phone number and name.
 The phoneNumber class is friend of numberInfo class. Create setters and getters method individually for all the member variables.
 
 Create three constructors as follows:
@@ -26,45 +26,39 @@ Create a copy constructor that can copy all those attributes that remain the sam
 b) Draw UML diagram for each class (including states/attributes and behavior) and show relationship between these classes. (3)
 */
 
-
-
 #include <iostream>
 #include <string>
 using namespace std;
 
 enum NUM = {mobile, landline};
 
-class NUMBER();
-class COMPUTATION();
-
-
 class PHONENUMBER()
 {
     private:
-    int country_code, city_code;
+    int ccode, ct_code;
     long int number;
     NUM num_type;
 
     public:
     PHONENUMBER()
     {
-        country_code = 92;
-        city_code = 0000;
+        ccode = 92;
+        ct_code = 0000;
         number = 123456;
         num_type = ####### ;
         //! ERROR
     }
     PHONENUMBER(int cc, int ctc, long int num)
     {
-        country_code = cc;
-        city_code = ctc;
+        ccode = cc;
+        ct_code = ctc;
         number = num;
         num_type = #####;
     }
     PHONENUMBER(int cc, int ctc, long int num, #####)
     {
-        country_code = cc;
-        city_code = ctc;
+        ccode = cc;
+        ct_code = ctc;
         number = num;
         num_type = #####;
     }
@@ -74,27 +68,76 @@ class PHONENUMBER()
 class NUMBERINFO()
 {
     private:
-    string name, city, address;
+    char* name[];
+    string city, address;
 
     public:
-    friend class PHONENUMBER();
+    friend class PHONENUMBER;
+    friend void showPhoneInfo(const phoneNumber& ph, const numberInfo& info);
+
+    // Default Constructor
+    NUMBERINFO()
+    {
+        name = new char[8];
+        strcpy(name, "Unknown");
+        city = "";
+        address = "";
+    }
+
+    // Copy Constructor
+    NUMBERINFO(NUMBERINFO& source)
+    {
+        if(source.name) {
+            name = new char[strlen(source.name) + 1];
+            strcpy(name, source.name);
+        } else {name = nullptr;}
+        city = source.city;
+        address = source.address;
+    }
+
+    // Parametrized Constructor
+    NUMBERINFO(const char* n, string ct, string add)
+    {
+        name = new char[strlen(n) + 1];
+        strcpy(name, n);
+        city = ct;
+        address = add;
+    }
+
+    ~NUMBERINFO()
+    {
+        delete[] name;
+    }
+
     void display const()
     {
-        cout << "Name : " << name << endl;
+        cout << "Display Member Function" << endl;
+        cout << "Name : " << (name : name ? "NONE") << endl;
         cout << "Phone Number : " << phonenumber<< endl;
     }
 
-    void setname(string _name){name = _name;}
-    void setname(string _city){city = _city;}
-    void setname(string _address){address = _address;}
+    // Getters and Setters
+    void setname(const char* n)
+    {
+        delete[] name;
+        name = new [strlen(n) + 1];
+        name = n;
+    }
+    const char* getname(){return name;}
 
-    string getname(){return name;}
+    void setname(string _city){city = _city;}
     string getcity(){return city;}
+
+    void setname(string _address){address = _address;}
     string getaddress(){return address;}
 };
 
-function showPhoneInfo()
+
+void showPhoneInfo(const phoneNumber& ph, const numberInfo& info)
 {
-
+    cout << "========== Phone Number Information ==========" << endl;
+    cout << "Name : " << endl;
+    cout << "Phone Number : " << endl;
+    cout << "City : " << endl;
+    cout << "Address : " << endl;
 }
-

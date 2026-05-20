@@ -1,0 +1,42 @@
+classDiagram
+    class phoneNumber {
+        -string countryCode
+        -string cityMobileCode
+        -string theNumber
+        -string numberType
+        +phoneNumber()
+        +phoneNumber(string cc, string cmc, string num)
+        +phoneNumber(string cc, string cmc, string num, string type)
+        +setCountryCode(string cc)
+        +getCountryCode() string
+        +setCityMobileCode(string cmc)
+        +getCityMobileCode() string
+        +setTheNumber(string num)
+        +getTheNumber() string
+        +setNumberType(string type)
+        +getNumberType() string
+    }
+
+    class numberInfo {
+        -char* name
+        -string city
+        -string address
+        +numberInfo()
+        +numberInfo(const char* n, string c, string a)
+        +~numberInfo()
+        +numberInfo(const numberInfo& source)
+        +setName(const char* n)
+        +getName() const char*
+        +setCity(string c)
+        +getCity() string
+        +setAddress(string a)
+        +getAddress() string
+        +display(const phoneNumber& p) void
+    }
+
+    note for phoneNumber "friend class numberInfo\nfriend void showPhoneInfo()"
+    note for numberInfo "friend void showPhoneInfo()"
+
+    %% Relationships
+    numberInfo ..> phoneNumber : Uses in display()
+    phoneNumber ..> numberInfo : Declared as Friend
